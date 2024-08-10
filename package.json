@@ -1,0 +1,17 @@
+{
+  "name": "api-recetas",
+  "version": "1.0.0",
+  "description": "api para el alta, baja y modificación de recetas",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch ./index.js"
+  },
+  "author": "Cristian Vera",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

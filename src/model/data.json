@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "titulo": "Spaghetti a la Carbonara",
+        "descripcion": "Un clásico italiano con tocino, huevos, y queso parmesano.",
+        "url_img": "https://example.com/images/spaghetti-carbonara.jpg"
+    },
+    {
+        "id": 2,
+        "titulo": "Ensalada César",
+        "descripcion": "Una ensalada fresca con lechuga romana, crutones, y aderezo César.",
+        "url_img": "https://example.com/images/ensalada-cesar.jpg"
+    },
+    {
+        "id": 3,
+        "titulo": "Tacos al Pastor",
+        "descripcion": "Tacos mexicanos de cerdo marinados en achiote y servidos con piña.",
+        "url_img": "https://example.com/images/tacos-al-pastor.jpg"
+    },
+    {
+        "id": 4,
+        "titulo": "Sushi de Salmón",
+        "descripcion": "Rollos de sushi con salmón fresco, arroz, y alga nori.",
+        "url_img": "https://example.com/images/sushi-salmon.jpg"
+    },
+    {
+        "id": 5,
+        "titulo": "Paella Valenciana",
+        "descripcion": "Un plato español tradicional con arroz, mariscos, y azafrán.",
+        "url_img": "https://example.com/images/paella-valenciana.jpg"
+    },
+    {
+        "id": 6,
+        "titulo": "Chiles en Nogada",
+        "descripcion": "Plato tradicional mexicano con chiles rellenos, bañados en una salsa de nuez.",
+        "url_img": "https://example.com/images/chiles-en-nogada.jpg"
+    },
+    {
+        "id": 7,
+        "titulo": "Pollo Tikka Masala",
+        "descripcion": "Un plato indio con pollo marinado en especias y yogurt, servido en una salsa cremosa de tomate.",
+        "url_img": "https://example.com/images/pollo-tikka-masala.jpg"
+    },
+    {
+        "id": 8,
+        "titulo": "Ratatouille",
+        "descripcion": "Un guiso francés de verduras, típicamente con berenjena, calabacín, y tomate.",
+        "url_img": "https://example.com/images/ratatouille.jpg"
+    },
+    {
+        "id": 9,
+        "titulo": "Hamburguesa Clásica",
+        "descripcion": "Una hamburguesa de carne de res con queso, lechuga, tomate, y cebolla.",
+        "url_img": "https://example.com/images/hamburguesa-clasica.jpg"
+    },
+    {
+        "id": 10,
+        "titulo": "Ceviche Peruano",
+        "descripcion": "Un plato peruano de pescado crudo marinado en jugo de limón, con cebolla, cilantro, y ají.",
+        "url_img": "https://example.com/images/ceviche-peruano.jpg"
+    }
+]
