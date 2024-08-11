@@ -1,39 +1,73 @@
-import recetas from "../model/fileSystem/data.json" assert {type: "json"};
 import { Recipe } from "../model/mongodb/recipesDb.js";
 export const recipesController = {
 
     async getAll(req, res) {
         const result = await Recipe.find();
-        result?
+        result ?
             res.status(200).json({ status: 'success', message: 'todas las recetas', data: result }) :
             res.status(404).json({ status: 'usuccess', message: 'no data found' })
-    }, 
+    },
 
     async getById(req, res) {
         const { id } = req.params;
         let receta = await Recipe.findById(id);
-        receta?
+        receta ?
             res.status(200).json({ status: 'success', message: 'receta por id', data: receta }) :
-            res.status(404).json({ status: 'usuccess', message: 'no data found' })
+            res.status(404).json({ status: 'usuccess', message: 'no se encontraron datos' })
     },
 
-    async create(req, res) {
+    async getByTitle(req, res) {
+        const { title } = req.query;
+
+        if (!title) {
+            res.status(400).json({ status: 'usuccess', message: 'sin query param' });
+        } else {
+            try {
+                const receta = await Recipe.find({ titulo: { $regex: title, $options: "i" } });
+                receta.length > 0 ?
+                res.status(200).json({ status: 'success', message: 'receta por id', data: receta }) :
+                res.status(404).json({ status: 'usuccess', message: `no se encontraron resultados para: ${title}` })
+            } catch (error) {
+                res.status(500).json({ status: 'usuccess', message: `Error del servidor ${error}` })
+            }
+        }
+    },
+
+    async createRecipe(req, res) {
+
         const { titulo, descripcion, dificultad, categoria, tags, url_img } = req.body;
-        const newRecipe = new Recipe({titulo, descripcion, dificultad, categoria, tags, url_img});
-       try {
-         await newRecipe.save();
-         res.status(200).json({ status: 'success', message: 'registro cargado', data: newRecipe })
-       } catch (error) {
-        res.status(500).json({ status: 'usuccess', message: `Error en el servidor: ${error}` })
-       }
+        const newRecipe = new Recipe({ titulo, descripcion, dificultad, categoria, tags, url_img });
+
+        try {
+            const savedRecipe = await newRecipe.save();
+            res.status(200).json({ status: 'success', message: 'registro cargado', data: savedRecipe })
+        } catch (error) {
+            res.status(500).json({ status: 'usuccess', message: `Error en el servidor: ${error}` })
+        }
+
+
     },
 
-    async delete(req,res){
+    async deleteOne(req, res) {
         const { id } = req.params;
-        const result = await Recipe.findOneAndDelete(id);
-        result?
-        res.status(200).json({ status: 'success', message: `se elimino el registro id: ${id}` }):
-        res.status(500).json({ status: 'unsuccess', message: `Error al intentar eliminar el registro id: ${id}` })
+        const result = await Recipe.findByIdAndDelete(id);
+        result ?
+            res.status(200).json({ status: 'success', message: `se elimino el registro id: ${id}` }) :
+            res.status(500).json({ status: 'unsuccess', message: `Error al intentar eliminar el registro id: ${id}` })
     },
+
+    async updateRecipe(req,res){
+        const { id } = req.params;
+
+        try{
+            const result = await Recipe.findByIdAndUpdate(id,req.body,{new:true});
+            result?
+            res.status(200).json({ status: 'success', message: `se actualizó el registro id: ${id}`,data:result }) :
+            res.status(404).json({ status: 'usuccess', message: `no se encontraron datos para el id: ${id}` })
+        } catch(err){
+            res.status(500).json({ status: 'usuccess', message: `Error en el servidor: ${err}` })
+        }
+
+    }
 
 } 

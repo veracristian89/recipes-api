@@ -1,5 +1,6 @@
 import express from 'express';
-import {router as recipesRouter} from './src/router/recipes.js';
+import {router as recipesRouter} from './src/router/recipes.router.js';
+import { router as usersRouter } from './src/router/users.router.js';
 import 'dotenv/config';
 import './db/dbconfig.js';
 
@@ -14,3 +15,4 @@ app.listen(port,(err)=>{
 });
 
 app.use('/api/recetas', recipesRouter);
+app.use('/api/users', usersRouter);
