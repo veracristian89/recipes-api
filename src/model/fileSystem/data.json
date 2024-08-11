@@ -1,0 +1,82 @@
+[
+    {
+        "titulo": "asado argentino",
+        "descripcion": "Carne asada a la parrilla, un clásico de la gastronomía argentina",
+        "dificultad": 3,
+        "categoria": "comidas",
+        "tags": ["almuerzos", "cenas", "parrilla"],
+        "url_img": "https://imagenesfalsas.com.ar/asado_argentino.jpg"
+    },
+    {
+        "titulo": "choripán",
+        "descripcion": "Sándwich de chorizo típico de Argentina y Uruguay",
+        "dificultad": 2,
+        "categoria": "comidas",
+        "tags": ["almuerzos", "snacks", "parrilla"],
+        "url_img": "https://imagenesfalsas.com.ar/choripan.jpg"
+    },
+    {
+        "titulo": "milanesa a la napolitana",
+        "descripcion": "Milanesa de carne con tomate, jamón y queso",
+        "dificultad": 4,
+        "categoria": "comidas",
+        "tags": ["almuerzos", "cenas", "italiana"],
+        "url_img": "https://imagenesfalsas.com.ar/milanesa_napolitana.jpg"
+    },
+    {
+        "titulo": "ensalada rusa",
+        "descripcion": "Ensalada fría con papas, zanahorias, arvejas y mayonesa",
+        "dificultad": 1,
+        "categoria": "comidas",
+        "tags": ["entradas", "acompañamientos"],
+        "url_img": "https://imagenesfalsas.com.ar/ensalada_rusa.jpg"
+    },
+    {
+        "titulo": "pollo al horno con papas",
+        "descripcion": "Pollo horneado con papas y especias",
+        "dificultad": 2,
+        "categoria": "comidas",
+        "tags": ["almuerzos", "cenas", "horno"],
+        "url_img": "https://imagenesfalsas.com.ar/pollo_horno.jpg"
+    },
+    {
+        "titulo": "flan casero",
+        "descripcion": "Postre tradicional de leche, huevos y azúcar",
+        "dificultad": 3,
+        "categoria": "postres",
+        "tags": ["dulces", "clásicos"],
+        "url_img": "https://imagenesfalsas.com.ar/flan_casero.jpg"
+    },
+    {
+        "titulo": "alfajores de maicena",
+        "descripcion": "Dulces rellenos de dulce de leche y cubiertos con coco rallado",
+        "dificultad": 4,
+        "categoria": "postres",
+        "tags": ["dulces", "tradicionales"],
+        "url_img": "https://imagenesfalsas.com.ar/alfajores_maicena.jpg"
+    },
+    {
+        "titulo": "torta de ricota",
+        "descripcion": "Postre hecho con ricota, ideal para acompañar el café",
+        "dificultad": 5,
+        "categoria": "postres",
+        "tags": ["dulces", "tartas"],
+        "url_img": "https://imagenesfalsas.com.ar/torta_ricota.jpg"
+    },
+    {
+        "titulo": "chocotorta",
+        "descripcion": "Postre sin horno hecho con galletitas de chocolate y dulce de leche",
+        "dificultad": 2,
+        "categoria": "postres",
+        "tags": ["dulces", "sin horno"],
+        "url_img": "https://imagenesfalsas.com.ar/chocotorta.jpg"
+    },
+    {
+        "titulo": "helado de dulce de leche",
+        "descripcion": "Helado cremoso con sabor a dulce de leche",
+        "dificultad": 3,
+        "categoria": "postres",
+        "tags": ["dulces", "fríos"],
+        "url_img": "https://imagenesfalsas.com.ar/helado_dulce_de_leche.jpg"
+    }
+]

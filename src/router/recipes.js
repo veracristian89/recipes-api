@@ -6,6 +6,7 @@ export const router = Router();
 //getAll
 router.get('/', recipesController.getAll);
 
+//getByTitle
 router.get('/S', (req, res) => {
     const { title } = req.query;
     res.send(`receta por titulo: ${req.query.title}`)
@@ -14,15 +15,13 @@ router.get('/S', (req, res) => {
 //getbyid
 router.get('/:id', recipesController.getById);
 
-router.post('/', (req, res) => res.send('agrego una receta'));
+//create
+router.post('/', recipesController.create);
 
 router.patch('/:id', (req, res) => {
     const { id } = req.params;
     res.send(`modifico una receta por id: ${id}`)
 });
 
-router.delete('/:id', (req, res) => {
-    const { id } = req.params;
-    res.send(`borro una receta por id: ${id}`)
-});
+router.delete('/:id', recipesController.delete);
 
