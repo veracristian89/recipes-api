@@ -10,7 +10,7 @@ export const token = {
       userName: user.userName,
     };
 
-    return jwt.sign(userForToken, process.env.JWT_SECRET, { expiresIn: "1m" });
+    return jwt.sign(userForToken, process.env.JWT_SECRET, { expiresIn: "1h" });
   },
 
   async verifyToken(req, res, next) {
