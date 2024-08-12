@@ -4,14 +4,14 @@ import { router as usersRouter } from './src/router/users.router.js';
 import 'dotenv/config';
 import './db/dbconfig.js';
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const app =  express();
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
 app.listen(port,(err)=>{
-    console.log(!err? `server running at http://localhost:${port}`:`server failed with error: ${err}`);
+    console.log(!err? `server running at port: ${port}`:`server failed with error: ${err}`);
 });
 
 app.use('/api/recetas', recipesRouter);
