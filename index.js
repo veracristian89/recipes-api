@@ -4,7 +4,7 @@ import { router as usersRouter } from './src/router/users.router.js';
 import 'dotenv/config';
 import './db/dbconfig.js';
 
-const port = process.env.PORT ?? 3000;
+const port = 3000;
 
 const app =  express();
 app.use(express.urlencoded({extended:true}));
