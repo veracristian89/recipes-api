@@ -5,4 +5,4 @@ export const router = Router();
 router.get("/");
 router.get("/:id");
 router.post("/register", userController.registerUser);
-router.post("/login");
+router.post("/login", userController.loginUser);
