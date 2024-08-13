@@ -72,6 +72,7 @@ const userController = {
         .json({ status: "unsuccess", message: `mail o contraseña incorrecto` });
     } else {
       const accesToken = await token.generateToken(user[0]);
+      console.log(`loged in as: ${user[0].userName}`);
       return res
         .status(200)
         .json({ status: "success", message: `autenticado como: ${user[0].userName}`, data: accesToken });
