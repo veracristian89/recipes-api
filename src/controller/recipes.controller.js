@@ -1,8 +1,15 @@
 import { Recipe } from "../model/mongodb/recipesDb.js";
+import logger from "../services/winstonLogger.js";
+
 export const recipesController = {
 
     async getAll(req, res) {
+
         const result = await Recipe.find();
+
+        result? logger.info('Obteniendo todas las recetas'):
+        logger.warn('error al obtener al obtener todas las recetas');
+
         result ?
             res.status(200).json({ status: 'success', message: 'todas las recetas', data: result }) :
             res.status(404).json({ status: 'usuccess', message: 'no data found' })
@@ -11,6 +18,8 @@ export const recipesController = {
     async getById(req, res) {
         const { id } = req.params;
         let receta = await Recipe.findById(id);
+        receta ? logger.info(`mostrando receta id: ${id}, titulo: ${receta.titulo}`):
+        logger.warn(`sin resultados para receta id: ${id}`); 
         receta ?
             res.status(200).json({ status: 'success', message: 'receta por id', data: receta }) :
             res.status(404).json({ status: 'usuccess', message: 'no se encontraron datos' })
