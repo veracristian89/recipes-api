@@ -6,9 +6,12 @@ const saltRounds = 10;
 
 const userController = {
   async registerUser(req, res) {
+
     const { userName, email, firstName, lastName } = req.body;
 
+
     const password = await bcrypt.hash(req.body.password, saltRounds);
+
 
     const data = {
       userName,
@@ -18,22 +21,24 @@ const userController = {
       password,
     };
 
+
     const newUser = new User(data);
 
     try {
       const result = await newUser.save();
       result
         ? res.status(201).json({
-            status: "success",
-            message: "se registro con exito",
-            data: result,
-          })
+          status: "success",
+          message: "se registro con exito",
+          data: result,
+        })
         : res.status(404).json({
-            status: "unsuccess",
-            message: "no se pudo registrar",
-            data: result,
-          });
+          status: "unsuccess",
+          message: "no se pudo registrar",
+          data: result,
+        });
     } catch (error) {
+      logger.error(`Error en el servidor: ${error}`);
       res.status(500).json({
         status: "unsuccess",
         message: `Error en el servidor: ${error}`,
@@ -83,11 +88,11 @@ const userController = {
     let user = await User.findById(id);
     user
       ? res
-          .status(200)
-          .json({ status: "success", message: "usuario por id", data: user })
+        .status(200)
+        .json({ status: "success", message: "usuario por id", data: user })
       : res
-          .status(404)
-          .json({ status: "unsuccess", message: "no se encuentra el usuario" });
+        .status(404)
+        .json({ status: "unsuccess", message: "no se encuentra el usuario" });
   },
 };
 
