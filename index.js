@@ -4,12 +4,15 @@ import { router as usersRouter } from './src/router/users.router.js';
 import logger from './src/services/winstonLogger.js';
 import 'dotenv/config';
 import './db/dbconfig.js';
+import swaggerUi from "swagger-ui-express";
+import swaggerDocs from "./src/config/swagger.js"; // Importamos Swagger
 
 const port = process.env.PORT ?? 3000;
 
 const app =  express();
 
-
+// Middleware para documentar API con Swagger
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
