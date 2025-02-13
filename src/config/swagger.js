@@ -9,9 +9,9 @@ const swaggerOptions = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "Mi API con Swagger",
+      title: "RECIPES-API Swagger",
       version: "1.0.0",
-      description: "Documentación de la API usando Swagger",
+      description: "Api para CRUD de recetas, registro y login de usuarios",
     },
     servers: [
       {
