@@ -15,7 +15,7 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: "http://localhost:3000", // Cambia según tu entorno
+        url: "https://recipes-api-gubg.onrender.com/", // Cambia según tu entorno
       },
     ],
   },
