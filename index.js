@@ -5,7 +5,8 @@ import logger from './src/services/winstonLogger.js';
 import 'dotenv/config';
 import './db/dbconfig.js';
 import swaggerUi from "swagger-ui-express";
-import swaggerDocs from "./src/config/swagger.js"; // Importamos Swagger
+import swaggerDocs from "./src/config/swagger.js";
+import cors from "cors";
 
 const port = process.env.PORT ?? 3000;
 
@@ -13,6 +14,8 @@ const app =  express();
 
 // Middleware para documentar API con Swagger
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+//habilitar cors
+app.use(cors());
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
