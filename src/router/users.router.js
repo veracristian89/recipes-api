@@ -84,7 +84,13 @@ router.post("/register", userController.registerUser);
  *           schema:
  *             type: object
  *             properties:
+ *               userName:
+ *                 type: string
  *               email:
+ *                 type: string
+ *               firstName:
+ *                 type: string
+ *               lastName:
  *                 type: string
  *               password:
  *                 type: string
