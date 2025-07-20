@@ -55,9 +55,13 @@ router.get("/:id", token.verifyToken, userController.getById);
  *           schema:
  *             type: object
  *             properties:
- *               nombre:
+ *               userName:
  *                 type: string
  *               email:
+ *                 type: string
+ *               firstName:
+ *                 type: string
+ *               lastName:
  *                 type: string
  *               password:
  *                 type: string
